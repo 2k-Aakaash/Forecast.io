@@ -130,9 +130,9 @@ function enableGyroscopeTilt() {
   VanillaTilt.init(document.querySelector(".container"), {
     // Other options...
     gyroscope: true,
-    gyroscopeMinAngleX: -105,
-    gyroscopeMaxAngleX: 200, 
-    gyroscopeMinAngleY: -105,
-    gyroscopeMaxAngleY: 200
+    gyroscopeMinAngleX: -1000,
+    gyroscopeMaxAngleX: 1000, 
+    gyroscopeMinAngleY: -1000,
+    gyroscopeMaxAngleY: 1000
   });
 }
