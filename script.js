@@ -104,3 +104,35 @@ VanillaTilt.init(document.querySelector(".container"), {
   gyroscopeMinAngleY:     -45,
   gyroscopeMaxAngleY:     45
 });
+
+// Check if the browser supports DeviceOrientation API
+if (window.DeviceOrientationEvent) {
+  // Request permission to access motion sensors
+  if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+    DeviceOrientationEvent.requestPermission()
+      .then(permissionState => {
+        if (permissionState === 'granted') {
+          enableGyroscopeTilt();
+        }
+      })
+      .catch(console.error);
+  } else {
+    // Permission already granted or not needed
+    enableGyroscopeTilt();
+  }
+} else {
+  // DeviceOrientation API not supported
+  console.error('DeviceOrientation API not supported');
+}
+
+// Function to enable gyroscope tilt effect
+function enableGyroscopeTilt() {
+  VanillaTilt.init(document.querySelector(".container"), {
+    // Other options...
+    gyroscope: true,
+    gyroscopeMinAngleX: -45,
+    gyroscopeMaxAngleX: 45, 
+    gyroscopeMinAngleY: -45,
+    gyroscopeMaxAngleY: 45
+  });
+}
