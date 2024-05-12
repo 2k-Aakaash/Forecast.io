@@ -73,3 +73,31 @@ h1{
     font-size: 40px;
     margin: 10px;
 }
+
+@media screen and (max-width: 560px){
+    .container{
+        margin: 10%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .container{
+        margin: 20%;
+    }
+
+    .title-text{
+        font-size: 20px;
+    }
+
+    .container{
+        width: 60%;
+    }
+
+    .cityname, .temp, .desc{
+        font-size: 9vw;
+    }
+
+    .input-text{
+        width: 90%;
+    }
+}
